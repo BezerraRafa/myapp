@@ -17,9 +17,12 @@ ActiveRecord::Schema.define(version: 20160319201834) do
     t.string   "Alimentação"
     t.string   "Permanência"
     t.integer  "Duração"
+    t.integer  "pagamento_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "auxilios", ["pagamento_id"], name: "index_auxilios_on_pagamento_id"
 
   create_table "estudantes", force: :cascade do |t|
     t.string   "Nome"
@@ -31,29 +34,35 @@ ActiveRecord::Schema.define(version: 20160319201834) do
     t.string   "Responsável"
     t.string   "Contato"
     t.string   "Curso"
+    t.integer  "auxilio_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+  add_index "estudantes", ["auxilio_id"], name: "index_estudantes_on_auxilio_id"
+
   create_table "pagamentos", force: :cascade do |t|
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "pagamentos", ["user_id"], name: "index_pagamentos_on_user_id"
+
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.boolean  "admin"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
