@@ -1,0 +1,65 @@
+<div class="subtitle-list page-header">
+    <%= link_to estudantes_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+  <% end %>
+    <%= link_to edit_estudante_path(@estudante), class: 'btn btn-success' do %>
+    <span class="glyphicon glyphicon-pencil"></span> Editar
+  <% end %>
+  <h1>Visualizar estudante</h1>
+</div>
+
+
+<p>
+  <strong>Nome:</strong>
+  <%= @estudante.Nome %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @estudante.Telefone %>
+</p>
+
+<p>
+  <strong>Renda:</strong>
+  <%= @estudante.Renda %>
+</p>
+
+<p>
+  <strong>Rg:</strong>
+  <%= @estudante.Rg %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @estudante.Email %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @estudante.Cpf %>
+</p>
+
+<p>
+  <strong>Responsável:</strong>
+  <%= @estudante.Responsável %>
+</p>
+
+<p>
+  <strong>Contato:</strong>
+  <%= @estudante.Contato %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @estudante.Curso %>
+</p>
+
+<%= link_to 'Edit', edit_estudante_path(@estudante) %> |
+<%= link_to 'Back', estudantes_path %>
+
+
+
+
+
+
+

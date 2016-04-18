@@ -1,0 +1,14 @@
+
+
+
+<div class="subtitle-list page-header">
+    <%= link_to estudantes_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+  <% end %>
+    <%= link_to @estudante, class: 'btn btn-success' do %>
+    <span class="glyphicon glyphicon-info-sign"></span> Visualizar
+  <% end %>
+  <h1>Editar estudante</h1>
+</div>
+
+<%= render 'form' %>
