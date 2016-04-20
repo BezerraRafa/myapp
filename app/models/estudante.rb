@@ -1,3 +1,3 @@
 class Estudante < ActiveRecord::Base
-    belongs_to :auxilio
+  belongs_to :auxilio
 end
