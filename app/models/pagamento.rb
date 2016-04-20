@@ -1,4 +1,4 @@
 class Pagamento < ActiveRecord::Base
-    has_many :auxilios
-    has_one :user
+  belongs_to :user
+  has_many :auxilios
 end
