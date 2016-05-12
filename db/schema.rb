@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420010704) do
+ActiveRecord::Schema.define(version: 20160512190227) do
 
   create_table "auxilios", force: :cascade do |t|
     t.integer  "tipo"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160420010704) do
     t.integer  "auxilio_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "status"
   end
 
   add_index "estudantes", ["auxilio_id"], name: "index_estudantes_on_auxilio_id"
