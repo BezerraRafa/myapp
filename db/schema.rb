@@ -14,8 +14,7 @@
 ActiveRecord::Schema.define(version: 20160420010704) do
 
   create_table "auxilios", force: :cascade do |t|
-    t.string   "Alimentação"
-    t.string   "Permanência"
+    t.integer  "tipo"
     t.integer  "Duração"
     t.integer  "pagamento_id"
     t.datetime "created_at"
@@ -44,12 +43,11 @@ ActiveRecord::Schema.define(version: 20160420010704) do
   add_index "estudantes", ["auxilio_id"], name: "index_estudantes_on_auxilio_id"
 
   create_table "pagamentos", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "status"
+    t.date     "data_pagamento"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
-
-  add_index "pagamentos", ["user_id"], name: "index_pagamentos_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

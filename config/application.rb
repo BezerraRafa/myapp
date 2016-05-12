@@ -24,5 +24,6 @@ module Myapp
     config.autoload_paths += %W(#{config.root}/lib #{config.root}/app/reports)
 
     config.active_record.raise_in_transactional_callbacks = true
+      config.middleware.use PDFKit::Middleware, print_media_type: true
   end
 end

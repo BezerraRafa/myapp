@@ -2,7 +2,7 @@ pt-BR:
   views:
   admin:
     home:
-      name: Home
+      name: Inicio
     pagination:
       previous: "&laquo; Anterior"
       next: "Próximo &raquo;"

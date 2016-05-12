@@ -19,6 +19,8 @@ gem 'i18n', github: 'svenfuchs/i18n'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem'postgresql'
+
 # Reports (git version for ruby 1.9.x compatibility)
 gem 'ruport', :git => 'https://github.com/ruport/ruport.git', :branch => 'ruby19-compat'
 gem 'acts_as_reportable'
@@ -55,6 +57,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+    
+gem 'wkhtmltopdf-binary'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
